@@ -19,11 +19,11 @@ router.post('/', asyncMiddleware(async (req, res, next) => {
 }));
 
 router.put('/:id', asyncMiddleware(async (req, res, next) => {
-  const updatedTask = await Task.findByIdAndUpdate(
+  await Task.findByIdAndUpdate(
     req.params.id,
     req.body,
   );
-  res.json(updatedTask);
+  res.json(req.body);
 }));
 
 router.delete('/:id', asyncMiddleware(async (req, res, next) => {
