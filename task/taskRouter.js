@@ -14,6 +14,7 @@ router.post('/', asyncMiddleware(async (req, res, next) => {
     ...req.body,
     started: false,
     completed: false,
+    createdAt: new Date(),
   });
   res.json(createdTask);
 }));
